@@ -1,0 +1,90 @@
+body{
+    background-color: pink;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    color: black;
+}
+
+.container{
+    display: grid;
+    width: 100vw;
+    height: 100vw;
+    margin: 5px;
+    grid-template-columns: auto repeat(2,fr);
+    /* grid-template-rows: repeat(2,fr); */
+    grid-template-rows: 100px 700px 1fr;
+    grid-template-areas: 
+    "hd hd hd hd"
+    "sd sd sd sd"
+    "ft ft ft ft";
+    /* justify-content: center;    */
+}
+
+.header{
+    grid-area: hd;
+}
+
+#title{
+    color: blueviolet;
+    font-size: 28px;
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.content{
+    display: grid;
+    grid-area: sd;
+    grid-template-columns: repeat(2,fr);
+    /* grid-template-rows: repeat(2,fr); */
+    grid-auto-rows: minmax(200px,auto);
+    grid-template-areas: 
+    "one one two two"
+    "three three four four";
+}
+
+.box{
+    display: flex;
+    padding: 20px;
+    margin: 15px;
+    border: 2px solid red;
+    border-radius: 12px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 60px;
+    background-blend-mode: color;
+    font-family: 'Caveat', cursive;
+}
+
+#draw{
+    grid-area: one;
+    color: red;
+    background-image:url('../images/draw.jpg');
+    background-size: contain;
+}
+
+#cook{
+    grid-area: two;
+    color:black;
+    background-image: url("../images/cook.jpeg");
+    background-size: contain;
+}
+
+#travel{
+    grid-area: three;
+    background-image:url("../images/Travel.jpg");
+    background-size: contain;
+}
+
+#skincare{
+    grid-area: four;
+    background-image:url("../images/skincare.png");
+    background-size: contain;
+}
+
+.footer{
+    display: flex;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    grid-area: ft;
+}    
