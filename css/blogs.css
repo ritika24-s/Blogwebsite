@@ -1,0 +1,75 @@
+body{
+    background-color: coral;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    color: black;
+    padding: 5px;
+    margin: 10px;
+}
+
+.container{
+    display: grid;
+    width: 100vw;
+    height: 100vw;
+    grid-template-columns: repeat(2,fr);
+    /* grid-template-rows: repeat(2,fr); */
+    grid-template-rows: 150px 700px 100px;
+    grid-gap: 20px;
+    grid-template-areas: 
+    "hd hd hd hd hd hd"
+    "main main main main main sd"
+    "ft ft ft ft ft ft";
+    /* justify-content: center;    */
+}
+
+.header{
+    grid-area: hd;
+    text-align: center;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#title{
+    color: blueviolet;
+    font-size: 28px;
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.content{
+    grid-area: main;
+    display: flex;
+    border: 2px blue dotted;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar{
+    display: flex;
+    grid-area: sd;
+    /* border: 2px solid beige; */
+    padding: 15px;
+    margin: 10px;
+    /* border-radius: 2px; */
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.footer{
+    display: flex;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    grid-area: ft;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+}    

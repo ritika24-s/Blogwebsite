@@ -1,27 +1,36 @@
 body{
-    background-color: pink;
+    background-color: honeydew;
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
     color: black;
+    padding: 5px;
+    margin: 10px;
 }
 
 .container{
     display: grid;
     width: 100vw;
     height: 100vw;
-    margin: 5px;
     grid-template-columns: auto repeat(2,fr);
     /* grid-template-rows: repeat(2,fr); */
-    grid-template-rows: 100px 700px 1fr;
+    grid-template-rows: 100px 700px 100px;
+    grid-gap: 20px;
     grid-template-areas: 
-    "hd hd hd hd"
-    "sd sd sd sd"
-    "ft ft ft ft";
+    "hd hd hd hd hd hd"
+    "main main main main main sd"
+    "ft ft ft ft ft ft";
     /* justify-content: center;    */
 }
 
 .header{
     grid-area: hd;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #title{
@@ -32,15 +41,20 @@ body{
     font-style: italic;
 }
 
+navigation{
+    display: flex;
+}
+
 .content{
     display: grid;
-    grid-area: sd;
+    grid-area: main;
     grid-template-columns: repeat(2,fr);
     /* grid-template-rows: repeat(2,fr); */
     grid-auto-rows: minmax(200px,auto);
     grid-template-areas: 
     "one one two two"
     "three three four four";
+    justify-content: center;
 }
 
 .box{
@@ -54,10 +68,14 @@ body{
     font-size: 60px;
     background-blend-mode: color;
     font-family: 'Caveat', cursive;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 #draw{
     grid-area: one;
+    display: inline-flex;
     color: red;
     background-image:url('../images/draw.jpg');
     background-size: contain;
@@ -66,20 +84,31 @@ body{
 #cook{
     grid-area: two;
     color:black;
+    display: inline-flex;
     background-image: url("../images/cook.jpeg");
     background-size: contain;
 }
 
 #travel{
     grid-area: three;
+    display: inline-flex;
     background-image:url("../images/Travel.jpg");
     background-size: contain;
 }
 
 #skincare{
     grid-area: four;
+    display: inline-flex;
     background-image:url("../images/skincare.png");
     background-size: contain;
+}
+
+.sidebar{
+    grid-area: sd;
+    border: 2px solid beige;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 2px;
 }
 
 .footer{
@@ -87,4 +116,6 @@ body{
     font-size: 10px;
     font-family: 'Times New Roman', Times, serif;
     grid-area: ft;
+    align-items: center;
+    text-align: center;
 }    
