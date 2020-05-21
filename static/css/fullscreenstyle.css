@@ -1,0 +1,14 @@
+.container{
+    display: grid;
+    width: 100vw;
+    height: 100vw;
+    grid-template-columns: repeat(2,fr);
+    /* grid-template-rows: repeat(2,fr); */
+    grid-template-rows: 150px 700px 100px;
+    grid-gap: 20px;
+    grid-template-areas: 
+    "hd hd hd hd hd hd"
+    "main main main main main sd"
+    "ft ft ft ft ft ft";
+    /* justify-content: center;    */
+}

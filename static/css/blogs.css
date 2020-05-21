@@ -1,5 +1,7 @@
+@import "mobstyle.css" screen;
+@import "fullscreenstyle.css"  (min-width:900px);
 body{
-    background-color: honeydew;
+    background-color: beige;
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
     color: black;
@@ -7,23 +9,9 @@ body{
     margin: 10px;
 }
 
-.container{
-    display: grid;
-    width: 100vw;
-    height: 100vw;
-    grid-template-columns: auto repeat(2,fr);
-    /* grid-template-rows: repeat(2,fr); */
-    grid-template-rows: 100px 700px 100px;
-    grid-gap: 20px;
-    grid-template-areas: 
-    "hd hd hd hd hd hd"
-    "main main main main main sd"
-    "ft ft ft ft ft ft";
-    /* justify-content: center;    */
-}
-
 .header{
     grid-area: hd;
+    text-align: center;
 }
 
 .nav{
@@ -41,11 +29,17 @@ body{
     font-style: italic;
 }
 
-navigation{
+.content{
+    grid-area: main;
     display: flex;
+    border: 2px blue dotted;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.content{
+.main{
     display: grid;
     grid-area: main;
     grid-template-columns: repeat(2,fr);
@@ -104,11 +98,15 @@ navigation{
 }
 
 .sidebar{
+    display: flex;
     grid-area: sd;
-    border: 2px solid beige;
+    /* border: 2px solid beige; */
     padding: 15px;
     margin: 10px;
-    border-radius: 2px;
+    /* border-radius: 2px; */
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
 }
 
 .footer{
@@ -116,6 +114,7 @@ navigation{
     font-size: 10px;
     font-family: 'Times New Roman', Times, serif;
     grid-area: ft;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
 }    

@@ -1,0 +1,3 @@
+@import "blogs.css";
+@import "mobstyle.css" screen;
+@import "fullscreenstyle.css"  (min-width:900px);
